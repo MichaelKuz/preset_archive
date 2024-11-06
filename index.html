@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preset</title>
+    <style>
+        body { 
+            line-height: 1.4;
+            font-size: 16px;
+            padding: 0 10px;
+            margin: 50px auto;
+            max-width: 650px;
+        }
+
+        #maincontent {
+            max-width: 42em;
+            margin: 15 auto;
+        }
+
+        .carousel {
+            position: relative;
+            padding-bottom: 56.25%;
+            margin: 20px 0;
+            height: 0;
+            background: #f5f5f5;
+        }
+
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .carousel-nav button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background: none;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .carousel-nav button.active {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="maincontent" style="margin-top:70px">
+        <h2>Goodbye, Preset</h2>
+
+        <p>Preset was an app that taught scientifically-validated mental techniques for high performance. Users applied these to advance at work, scale businesses, or achieve personal goals.</p>
+
+        <div class="carousel">
+            <video class="carousel-item active" playsinline controls>
+                <source src="fish_by_fish.mov" type="video/quicktime">
+            </video>
+            <video class="carousel-item" playsinline controls>
+                <source src="next_play.mp4" type="video/mp4">
+            </video>
+            <video class="carousel-item" playsinline controls>
+                <source src="bad_simpsons.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="carousel-nav">
+            <button onclick="showSlide(0)" class="active">Fish by Fish</button>
+            <button onclick="showSlide(1)">Next Play</button>
+            <button onclick="showSlide(2)">Bad Simpsons</button>
+        </div>
+
+        <p>The motivation content industry is enormous, and shortly after the pandemic it seemed that the market was ready for a science-based, high-quality approach. We pulled together a group of <a href="https://www.hellonickgallo.com/">mobile video geniuses</a>, <a href="https://www.instagram.com/jtenthousand/">Emmy-award winning TV writers</a>, <a href="https://gregorywalton-stanford.weebly.com/">psychologists from Stanford</a>, top-notch designers and devs, and some of the <a href="https://www.instagram.com/erock_808/">best-regarded coaches</a> in the world. We came to work every day guided by the core belief that peak performance is learnable.</p>
+
+        <p>Along the way, we reviewed hundreds (or maybe even thousands) of academic papers, books, and videos on motivation. We iterated relentlessly on our content – running a casting call for hundreds of potential actors and filming hundreds of motivational videos. Later, we started using (what were at the time) very new commercial AI techniques, like RAG and voice cloning, to create fully personalized content. As a foil against typical motivational content, which overuses the same two or three techniques, everything we shipped was rooted in one of ~100 validated mindset technique from the literature.</p>
+
+        <p>We loved hearing stories from users around the world as they used Preset to help them get ahead at work, train for marathons and other races, battle addiction, get out of bad relationships and into good ones, and more. </p>
+
+        <p> Preset was shut down at the end of 2023. The research behind performance psychology is powerful and fascinating, and I encourage you to keep exploring it. Feel free to <a href="https://www.linkedin.com/in/michaelkuznetsov/">reach out</a> and share a bit about what you're working on. If time allows, I'll be happy to share any of the research we did that might be helpful.</p>
+    </div>
+
+    <script>
+        function showSlide(index) {
+            // Hide all slides
+            document.querySelectorAll('.carousel-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            // Show selected slide
+            document.querySelectorAll('.carousel-item')[index].classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.carousel-nav button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelectorAll('.carousel-nav button')[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>
